@@ -10,11 +10,11 @@ WORKDIR /app
 COPY ./src /app
 RUN bundle config --local set path 'vendor/bundle' \
   && bundle install
-# windowsユーザーは下の二行を自分のパソコンのアカウントに合わせる、pwはすきなものでいい
-#RUN useradd -m username && \
-#echo "username:userpass" | chpasswd
+# windowsユーザーは下の二行を username を自分のパソコンのアカウントに合わせる、pwはすきなものでいい
+# RUN useradd -m username && \
+# echo "username:pass" | chpasswd
 
-COPY start.sh /start.sh]
+COPY start.sh /start.sh
 RUN chmod 744 /start.sh
 CMD ["sh", "/start.sh"]
 
